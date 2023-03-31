@@ -5,6 +5,7 @@ const scoreContainer = document.querySelector(".score");
 const jurons = document.querySelectorAll("main div");
 const iaText = document.querySelector(".iadatacontainer");
 const playerText = document.querySelector(".playerdatacontainer");
+const delayTest = document.querySelector(".delaytest");
 let score = 0;
 let ID;
 let juronID;
@@ -32,7 +33,7 @@ function play() {
     playButton.style.display = "none";
     checkButton.style.display = "inline-block";
     playerText.innerHTML = "";
-    animation();
+    // arrayMap();
   });
 }
 
@@ -74,8 +75,12 @@ function valider() {
   });
 }
 
-function animation() {
-  for (let i = 0; i < IAData.length; i++) {
-    console.log(IAData.length);
-  }
-}
+// function arrayMap() {
+// IAData.map((data) => {
+// function delay() {
+//delayTest.innerHTML = `${data}`;
+//}
+//window.setTimeout(delay, 2000);
+//delayTest.set;
+//});
+//}
