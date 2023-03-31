@@ -45,6 +45,7 @@ function choose() {
       let newJuronID = e.target.id;
       juronID = document.getElementById(`${newJuronID}`);
       playerText.innerHTML += juronID.id;
+      animation();
     });
   });
 }
@@ -78,12 +79,15 @@ function readDataInterval() {
     setTimeout(function () {
       console.log(IAData[i]);
       juronID = document.getElementById(`${IAData[i]}`);
-      juronID.classList.add("animation");
-      setTimeout(function () {
-        juronID.classList.remove("animation");
-      }, 500);
-
       console.log(juronID);
+      animation();
     }, 1000 * i);
   }
+}
+
+function animation() {
+  juronID.classList.add("animation");
+  setTimeout(function () {
+    juronID.classList.remove("animation");
+  }, 500);
 }
