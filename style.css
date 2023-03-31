@@ -1,6 +1,8 @@
 body {
   text-align: center;
   padding-top: 100px;
+  background-color: black;
+  color: aliceblue;
 }
 
 main {
@@ -39,7 +41,7 @@ button {
 }
 
 .animation {
-  animation: fade 0.64s;
+  animation: fade 0.34s;
   animation-fill-mode: forwards;
   opacity: 1;
 }

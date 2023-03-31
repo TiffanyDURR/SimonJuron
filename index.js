@@ -89,5 +89,5 @@ function animation() {
   juronID.classList.add("animation");
   setTimeout(function () {
     juronID.classList.remove("animation");
-  }, 500);
+  }, 340);
 }
