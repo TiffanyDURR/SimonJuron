@@ -11,8 +11,7 @@ let ID;
 let juronID;
 let IAData = [];
 let i;
-let x = 1;
-let y;
+let x;
 
 function init() {
   checkButton.style.display = "none";
@@ -37,6 +36,7 @@ function play() {
     checkButton.style.display = "inline-block";
     playerText.innerHTML = "";
     readDataInterval();
+    musicPlay(x);
   });
 }
 
@@ -64,7 +64,6 @@ function valider() {
       scoreContainer.innerHTML = `Perdu !`;
       restartButton.style.display = "inline-block";
       checkButton.style.display = "none";
-      musicLooser(y);
     }
   });
 }
@@ -77,8 +76,7 @@ function readDataInterval() {
   function intervalDelay(i) {
     setTimeout(function () {
       juronID = document.getElementById(`${IAData[i]}`);
-      x = IAData[i];
-      musicPlay(x);
+      console.log(i + "test");
       animation();
     }, 800 * i);
   }
@@ -91,15 +89,9 @@ function animation() {
   }, 340);
 }
 
+x = 1;
 function musicPlay(x) {
   const audio = new Audio();
   audio.src = `${x}.mp3`;
-  audio.play();
-}
-
-function musicLooser(y) {
-  y = generateID(1, 5);
-  const audio = new Audio();
-  audio.src = `loose${y}.mp3`;
   audio.play();
 }
