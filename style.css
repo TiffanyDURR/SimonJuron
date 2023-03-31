@@ -1,38 +1,65 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
 body {
   text-align: center;
   padding-top: 100px;
-  background-color: black;
   color: aliceblue;
+  text-align: center;
+  background-color: #303030;
 }
 
 main {
-  display: flex;
-  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 512px;
+  width: 512px;
+  background: url(assets/background.png);
 }
 
-main div {
-  width: 120px;
-  height: 120px;
+.gameContainer {
+  display: block;
+  position: absolute;
+  height: 512px;
+  width: 512px;
+}
+
+.gameContainer img {
+  position: absolute;
 }
 
 .id1 {
-  background-color: blue;
+  top: 129px;
+  left: 26px;
+  z-index: 0;
 }
 
 .id2 {
-  background-color: green;
+  top: 27px;
+  left: 77px;
 }
 
 .id3 {
-  background-color: red;
+  top: 41px;
+  left: 296px;
 }
 
 .id4 {
-  background-color: yellow;
+  top: 265px;
+  left: 296px;
 }
 
 .id5 {
-  background-color: purple;
+  top: 324px;
+  left: 76px;
+  z-index: 8;
 }
 
 button {

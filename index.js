@@ -2,7 +2,7 @@ const playButton = document.getElementById("play");
 const checkButton = document.getElementById("valider");
 const restartButton = document.getElementById("recommencer");
 const scoreContainer = document.querySelector(".score");
-const jurons = document.querySelectorAll("main div");
+const jurons = document.querySelectorAll("main img");
 const iaText = document.querySelector(".iadatacontainer");
 const playerText = document.querySelector(".playerdatacontainer");
 const delayTest = document.querySelector(".delaytest");
@@ -37,6 +37,7 @@ function play() {
     checkButton.style.display = "inline-block";
     playerText.innerHTML = "";
     readDataInterval();
+    console.log(800 * i);
   });
 }
 
@@ -88,7 +89,7 @@ function animation() {
   juronID.classList.add("animation");
   setTimeout(function () {
     juronID.classList.remove("animation");
-  }, 340);
+  }, 400);
 }
 
 function musicPlay(x) {
