@@ -34,6 +34,7 @@ function play() {
     playButton.style.display = "none";
     checkButton.style.display = "inline-block";
     playerText.innerHTML = "";
+    readDataInterval();
   });
 }
 
@@ -69,8 +70,20 @@ function valider() {
   });
 }
 
-// Lire iaData avec un intervalle entre chaque élément lu
+function readDataInterval() {
+  for (let i = 0; i < IAData.length; i++) {
+    intervalDelay(i);
+  }
+  function intervalDelay(i) {
+    setTimeout(function () {
+      console.log(IAData[i]);
+      juronID = document.getElementById(`${IAData[i]}`);
+      juronID.classList.add("animation");
+      setTimeout(function () {
+        juronID.classList.remove("animation");
+      }, 500);
 
-function readDataInterval() {}
-
-readDataInterval();
+      console.log(juronID);
+    }, 1000 * i);
+  }
+}
