@@ -17,6 +17,7 @@ function init() {
   restartButton.style.display = "none";
   choose();
   valider();
+  play();
 }
 
 init();
@@ -28,19 +29,13 @@ function generateID(min, max) {
 function play() {
   playButton.addEventListener("click", () => {
     ID = generateID(1, 5);
-    IADataPush();
+    IAData.push(ID);
     iaText.innerHTML += ID;
     playButton.style.display = "none";
     checkButton.style.display = "inline-block";
     playerText.innerHTML = "";
     // arrayMap();
   });
-}
-
-play();
-
-function IADataPush() {
-  IAData.push(ID);
 }
 
 function choose() {
