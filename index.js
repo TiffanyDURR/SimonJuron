@@ -31,6 +31,7 @@ function play() {
     iaText.innerHTML += ID;
     playButton.style.display = "none";
     checkButton.style.display = "inline-block";
+    playerText.innerHTML = "";
   });
 }
 
@@ -67,6 +68,7 @@ function valider() {
       score = 0;
       scoreContainer.innerHTML = `Perdu !`;
       restartButton.style.display = "inline-block";
+      checkButton.style.display = "none";
     }
   });
 }
