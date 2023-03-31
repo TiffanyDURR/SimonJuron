@@ -64,5 +64,5 @@ button {
 
 .iadatacontainer,
 .playerdatacontainer {
-  visibility: hidden;
+  display: none;
 }
