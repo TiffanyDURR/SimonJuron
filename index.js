@@ -32,6 +32,7 @@ function play() {
     playButton.style.display = "none";
     checkButton.style.display = "inline-block";
     playerText.innerHTML = "";
+    animation();
   });
 }
 
@@ -71,4 +72,10 @@ function valider() {
       checkButton.style.display = "none";
     }
   });
+}
+
+function animation() {
+  for (let i = 0; i < IAData.length; i++) {
+    console.log(IAData.length);
+  }
 }
