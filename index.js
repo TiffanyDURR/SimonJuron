@@ -75,7 +75,7 @@ function readDataInterval() {
       juronID = document.getElementById(`${IAData[i]}`);
       console.log(juronID);
       animation();
-    }, 1000 * i);
+    }, 800 * i);
   }
 }
 
