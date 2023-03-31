@@ -10,7 +10,6 @@ let score = 0;
 let ID;
 let juronID;
 let IAData = [];
-let playerData = [];
 
 function init() {
   checkButton.style.display = "none";
@@ -50,10 +49,6 @@ function choose() {
   });
 }
 
-function playerDataPush() {
-  playerData.push(juronID.id);
-}
-
 function valider() {
   checkButton.addEventListener("click", () => {
     if (iaText.textContent == playerText.textContent) {
@@ -61,7 +56,6 @@ function valider() {
       scoreContainer.innerHTML = `${IAData.length}`;
       checkButton.style.display = "none";
       playButton.style.display = "inline-block";
-      playerDataPush();
     } else {
       score = 0;
       scoreContainer.innerHTML = `Perdu !`;
