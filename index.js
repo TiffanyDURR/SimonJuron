@@ -34,7 +34,6 @@ function play() {
     playButton.style.display = "none";
     checkButton.style.display = "inline-block";
     playerText.innerHTML = "";
-    // arrayMap();
   });
 }
 
@@ -70,12 +69,8 @@ function valider() {
   });
 }
 
-// function arrayMap() {
-// IAData.map((data) => {
-// function delay() {
-//delayTest.innerHTML = `${data}`;
-//}
-//window.setTimeout(delay, 2000);
-//delayTest.set;
-//});
-//}
+// Lire iaData avec un intervalle entre chaque élément lu
+
+function readDataInterval() {}
+
+readDataInterval();
