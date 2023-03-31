@@ -1,0 +1,39 @@
+body {
+  text-align: center;
+  padding-top: 100px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+main div {
+  width: 120px;
+  height: 120px;
+}
+
+.id1 {
+  background-color: blue;
+}
+
+.id2 {
+  background-color: green;
+}
+
+.id3 {
+  background-color: red;
+}
+
+.id4 {
+  background-color: yellow;
+}
+
+.id5 {
+  background-color: purple;
+}
+
+button {
+  margin-top: 20px;
+  width: 120px;
+}
