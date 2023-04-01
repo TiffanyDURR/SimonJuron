@@ -1,15 +1,18 @@
-const playButton = document.getElementById("play");
-const checkButton = document.getElementById("valider");
-const restartButton = document.getElementById("recommencer");
+const playButton = document.querySelector(".commencer");
+const checkButton = document.querySelector(".valider");
+const restartButton = document.querySelector(".perdu");
 const scoreContainer = document.querySelector(".score");
-const jurons = document.querySelectorAll("main img");
+const jurons = document.querySelectorAll(".gameContainer img");
 const iaText = document.querySelector(".iadatacontainer");
 const playerText = document.querySelector(".playerdatacontainer");
 const delayTest = document.querySelector(".delaytest");
+const wkinprogress = document.querySelector(".wiprogress");
+const allButton = document.querySelectorAll(".mainbutton img");
 let score = 0;
 let ID;
 let juronID;
 let IAData = [];
+let playerData = [];
 let i;
 let x = 1;
 let y;
@@ -17,9 +20,10 @@ let y;
 function init() {
   checkButton.style.display = "none";
   restartButton.style.display = "none";
-  choose();
+  wkinprogress.style.display = "none";
+  nouvellePartie();
+  tourDuJoueur();
   valider();
-  play();
 }
 
 init();
@@ -28,27 +32,39 @@ function generateID(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function play() {
+function tourIA() {
+  ID = generateID(1, 5);
+  IAData.push(`${ID}`);
+  iaText.innerHTML += ID;
+  playButton.style.display = "none";
+  checkButton.style.display = "none";
+  wkinprogress.style.display = "block";
+  playerText.innerHTML = "";
+  readDataInterval();
+  setTimeout(() => {
+    checkButton.style.display = "block";
+  }, 800 * i);
+}
+
+function nouvellePartie() {
   playButton.addEventListener("click", () => {
-    ID = generateID(1, 5);
-    IAData.push(ID);
-    iaText.innerHTML += ID;
-    playButton.style.display = "none";
-    checkButton.style.display = "inline-block";
-    playerText.innerHTML = "";
-    readDataInterval();
-    console.log(800 * i);
+    tourIA();
   });
 }
 
-function choose() {
+function tourDuJoueur() {
+  console.log(IAData.length + " Longueur de la suite");
   jurons.forEach((juron) => {
     juronID = document.getElementById(`${juron.id}`);
     juronID.addEventListener("click", (e) => {
       let newJuronID = e.target.id;
       juronID = document.getElementById(`${newJuronID}`);
       playerText.innerHTML += juronID.id;
+      playerData.push(juronID.id);
       animation();
+      console.log(playerData.length);
+      console.log(playerData);
+      console.log(iaText.textContent);
     });
   });
 }
@@ -59,7 +75,10 @@ function valider() {
       score = IAData.length;
       scoreContainer.innerHTML = `${IAData.length}`;
       checkButton.style.display = "none";
-      playButton.style.display = "inline-block";
+      playButton.style.display = "none";
+      playerText.innerHTML = "";
+      playerData = [];
+      tourIA();
     } else {
       score = 0;
       scoreContainer.innerHTML = `Perdu !`;
@@ -89,7 +108,7 @@ function animation() {
   juronID.classList.add("animation");
   setTimeout(function () {
     juronID.classList.remove("animation");
-  }, 400);
+  }, 180);
 }
 
 function musicPlay(x) {

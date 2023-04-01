@@ -24,15 +24,30 @@ main {
   background: url(assets/background.png);
 }
 
-.gameContainer {
+.gameContainer,
+.mainbutton {
   display: block;
   position: absolute;
   height: 512px;
   width: 512px;
 }
 
-.gameContainer img {
+.gameContainer img,
+.mainbutton img {
   position: absolute;
+}
+
+.mainbutton img {
+  top: 175px;
+  left: 175px;
+  z-index: 1000;
+}
+
+.mainbutton img.donttouch {
+  top: 0px;
+  left: 0px;
+  z-index: 1003;
+  cursor: not-allowed;
 }
 
 .id1 {
@@ -68,7 +83,7 @@ button {
 }
 
 .animation {
-  animation: fade 0.34s;
+  animation: fade 0.18s;
   animation-fill-mode: forwards;
   opacity: 1;
 }
@@ -94,4 +109,12 @@ button {
 .iadatacontainer,
 .playerdatacontainer {
   display: none;
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayBlock {
+  display: block;
 }

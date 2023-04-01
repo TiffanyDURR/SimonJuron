@@ -2,7 +2,7 @@ const playButton = document.getElementById("play");
 const checkButton = document.getElementById("valider");
 const restartButton = document.getElementById("recommencer");
 const scoreContainer = document.querySelector(".score");
-const jurons = document.querySelectorAll("main div");
+const jurons = document.querySelectorAll(".gameContainer img");
 const iaText = document.querySelector(".iadatacontainer");
 const playerText = document.querySelector(".playerdatacontainer");
 const delayTest = document.querySelector(".delaytest");
@@ -11,7 +11,8 @@ let ID;
 let juronID;
 let IAData = [];
 let i;
-let x;
+let x = 1;
+let y;
 
 function init() {
   checkButton.style.display = "none";
@@ -36,7 +37,7 @@ function play() {
     checkButton.style.display = "inline-block";
     playerText.innerHTML = "";
     readDataInterval();
-    musicPlay(x);
+    console.log(800 * i);
   });
 }
 
@@ -64,6 +65,7 @@ function valider() {
       scoreContainer.innerHTML = `Perdu !`;
       restartButton.style.display = "inline-block";
       checkButton.style.display = "none";
+      musicLooser(y);
     }
   });
 }
@@ -76,7 +78,8 @@ function readDataInterval() {
   function intervalDelay(i) {
     setTimeout(function () {
       juronID = document.getElementById(`${IAData[i]}`);
-      console.log(i + "test");
+      x = IAData[i];
+      musicPlay(x);
       animation();
     }, 800 * i);
   }
@@ -86,12 +89,41 @@ function animation() {
   juronID.classList.add("animation");
   setTimeout(function () {
     juronID.classList.remove("animation");
-  }, 340);
+  }, 150);
 }
 
-x = 1;
 function musicPlay(x) {
   const audio = new Audio();
   audio.src = `${x}.mp3`;
   audio.play();
 }
+
+function musicLooser(y) {
+  y = generateID(1, 5);
+  const audio = new Audio();
+  audio.src = `loose${y}.mp3`;
+  audio.play();
+}
+
+const dontTouch = document.querySelector(".donttouch");
+const commencer = document.querySelector(".commencer");
+const wkinprogress = document.querySelector(".wiprogress");
+const perdu = document.querySelector(".perdu");
+const urturn = document.querySelector(".urturn");
+
+function musicPlay(x) {
+  const audio = new Audio();
+  audio.src = `${x}.mp3`;
+  audio.play();
+}
+
+function musicLooser(y) {
+  y = generateID(1, 5);
+  const audio = new Audio();
+  audio.src = `loose${y}.mp3`;
+  audio.play();
+}
+
+setTimeout(() => {
+  checkButton.style.display = "inline-block";
+}, 800 * i);

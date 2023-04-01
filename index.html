@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Le Simon Juron</title>
+    <title>Simon GROGNON !!!</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="index.js"></script>
   </head>
   <body>
     <main>
+      <div class="mainbutton">
+        <img src="assets/commencer.png" class="commencer" />
+        <img src="assets/workinprogress.png" class="wiprogress" />
+        <img src="assets/valider.png" class="valider" />
+        <img src="assets/perdu.png" class="perdu" onclick="window.location.reload();" />
+      </div>
       <span class="gameContainer">
         <img class="id1" id="1" onclick="musicPlay(`1`)" src="assets/1.png" />
         <img class="id2" id="2" onclick="musicPlay(`2`)" src="assets/2.png" />
@@ -21,10 +27,7 @@
 
     <div class="iadatacontainer"></div>
     <div class="playerdatacontainer"></div>
-    <h3 class="delaytest"></h3>
-    <button id="play">Play</button>
-    <button id="valider">Valider</button>
-    <button id="recommencer" onclick="window.location.reload();">Recommencer</button>
+
     <p>Score :</p>
     <h1 class="score">0</h1>
   </body>
